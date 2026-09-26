@@ -109,7 +109,7 @@ window.SM = window.SM || {};
       ${big ? rings : ''}
       <g class="sm-body">
         ${wing(-1)}${wing(1)}
-        <path d="M${100 - 36 * k} ${62 - (k - 1) * 40} L${100 - 44 * k} ${34 - (k - 1) * 50} L${100 - 18 * k} ${52 - (k - 1) * 40}Z M${100 + 36 * k} ${62 - (k - 1) * 40} L${100 + 44 * k} ${34 - (k - 1) * 50} L${100 + 18 * k} ${52 - (k - 1) * 40}Z" fill="${c.color}" stroke="#fff" stroke-width="1.5"/>
+        ${(() => { const top = 112 - (k - 1) * 20 - 62 * k; const t = (d) => `M${100 + d * 34 * k} ${top + 26} L${100 + d * 40 * k} ${top - 14} L${100 + d * 12 * k} ${top + 8}Z`; return `<path d="${t(-1)} ${t(1)}" fill="${c.color}" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/>`; })()}
         <ellipse cx="100" cy="${112 - (k - 1) * 20}" rx="${46 * k}" ry="${62 * k}" fill="${B}" stroke="#fff" stroke-opacity=".6" stroke-width="2" filter="url(#g${id})"/>
         <path d="M84 140 l8 6 l8 -6 l8 6 l8 -6 M84 154 l8 6 l8 -6 l8 6 l8 -6" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.6"/>
         ${big ? `<path d="M100 164 l8 4.5 v9 l-8 4.5 l-8 -4.5 v-9Z" fill="#0B1030" stroke="#fff" stroke-width="1.5"/><circle cx="100" cy="173" r="3" fill="${c.color}" class="sm-pulse"/>` : ''}
