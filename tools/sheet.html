@@ -1,0 +1,34 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><link rel="stylesheet" href="../css/style.css">
+<style>body{overflow:auto;padding:20px;background:#070B24}.sheet2{width:1100px;padding:28px;border-radius:24px;background:radial-gradient(120% 90% at 50% 0%,#131b52,#070B24);border:1px solid #223;margin-bottom:24px}
+.sheet2 h2{margin:0 0 4px;font-size:30px}.sheet2 p{margin:0 0 16px;color:#93A0C8}.row{display:flex;gap:18px;align-items:flex-end}.st{flex:1;text-align:center;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:12px}
+.st svg{width:100%;height:auto}.st b{font-size:22px;display:block}.st small{color:#93A0C8;font-size:14px}.arrow{font-size:34px;color:#93A0C8;align-self:center}
+.all{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.all .st svg{width:100%}#logo{width:600px;text-align:center}#logo img{width:300px}#logo h1{font-size:44px;margin:10px 0 0;background:linear-gradient(90deg,#00D4FF,#39FF14,#B026FF);-webkit-background-clip:text;color:transparent}
+#device{width:760px}</style></head><body>
+<div id="out"></div>
+<script src="../js/characters.js"></script><script src="../js/avatar.js"></script>
+<script>
+const out=document.getElementById('out');let h='';
+for(const id of SM.ORDER){const c=SM.CHARACTERS[id];
+h+=`<div class="sheet2" id="sheet-${id}" style="border-color:${c.color}55"><h2 style="color:${c.color}">${c.stages[1]} — ${c.kind}</h2><p>${c.trait} · اللون ${c.color} · مراحل التطور الثلاث</p><div class="row">`;
+c.stages.forEach((s,i)=>{h+=(i?'<div class="arrow">←</div>':'')+`<div class="st">${SM.avatarSVG(id,i,{static:true})}<b style="color:${c.color}">${s}</b><small>${c.stageDesc[i]}</small></div>`});h+='</div></div>';}
+h+=`<div class="sheet2" id="sheet-all"><h2>العقل الذكي — كل الشخصيات والمراحل</h2><p>ثاقب · غصن · رعد</p><div class="all">`;
+for(let s=0;s<3;s++)for(const id of SM.ORDER){const c=SM.CHARACTERS[id];h+=`<div class="st">${SM.avatarSVG(id,s,{static:true})}<b style="color:${c.color}">${c.stages[s]}</b></div>`}
+h+='</div></div>';
+h+=`<div class="sheet2" id="logo"><img src="../icons/logo.svg"><h1>العقل الذكي</h1><p>Smart Mind · دماغ من الدوائر داخل شكل سداسي</p></div>`;
+out.innerHTML=h;
+</script>
+<div class="sheet2" id="device"><h2 style="color:#00D4FF">«رابط» — جهاز الربط</h2><p>سوار معصم بشاشة سداسية: مقياس الرابطة (الإطار) وتقدّم التطور</p>
+<svg viewBox="0 0 700 360" width="700">
+<defs><linearGradient id="st" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#1c2560"/><stop offset="1" stop-color="#0a0f30"/></linearGradient>
+<linearGradient id="lgd" x1="0" x2="1"><stop offset="0" stop-color="#00D4FF"/><stop offset=".5" stop-color="#39FF14"/><stop offset="1" stop-color="#B026FF"/></linearGradient></defs>
+<path d="M0 130 Q350 100 700 130 V230 Q350 260 0 230Z" fill="url(#st)" stroke="#00D4FF" stroke-opacity=".5"/>
+<g stroke="#00D4FF" stroke-opacity=".25"><line x1="0" y1="140" x2="0" y2="222"/><line x1="24" y1="140" x2="24" y2="222"/><line x1="48" y1="140" x2="48" y2="222"/><line x1="72" y1="140" x2="72" y2="222"/><line x1="96" y1="140" x2="96" y2="222"/><line x1="120" y1="140" x2="120" y2="222"/><line x1="144" y1="140" x2="144" y2="222"/><line x1="168" y1="140" x2="168" y2="222"/><line x1="192" y1="140" x2="192" y2="222"/><line x1="216" y1="140" x2="216" y2="222"/><line x1="240" y1="140" x2="240" y2="222"/><line x1="264" y1="140" x2="264" y2="222"/><line x1="288" y1="140" x2="288" y2="222"/><line x1="312" y1="140" x2="312" y2="222"/><line x1="336" y1="140" x2="336" y2="222"/><line x1="360" y1="140" x2="360" y2="222"/><line x1="384" y1="140" x2="384" y2="222"/><line x1="408" y1="140" x2="408" y2="222"/><line x1="432" y1="140" x2="432" y2="222"/><line x1="456" y1="140" x2="456" y2="222"/><line x1="480" y1="140" x2="480" y2="222"/><line x1="504" y1="140" x2="504" y2="222"/><line x1="528" y1="140" x2="528" y2="222"/><line x1="552" y1="140" x2="552" y2="222"/><line x1="576" y1="140" x2="576" y2="222"/><line x1="600" y1="140" x2="600" y2="222"/><line x1="624" y1="140" x2="624" y2="222"/><line x1="648" y1="140" x2="648" y2="222"/><line x1="672" y1="140" x2="672" y2="222"/><line x1="696" y1="140" x2="696" y2="222"/></g>
+<polygon points="350,20 480,95 480,265 350,340 220,265 220,95" fill="#070B24" stroke="#2a336a" stroke-width="6"/>
+<polygon points="350,20 480,95 480,265 350,340 220,265 220,95" fill="none" stroke="url(#lgd)" stroke-width="10" pathLength="100" stroke-dasharray="64 100" stroke-linecap="round"/>
+<g transform="translate(262 88) scale(0.88)" id="devav"></g>
+<rect x="290" y="300" width="120" height="8" rx="4" fill="#ffffff22"/><rect x="290" y="300" width="80" height="8" rx="4" fill="#00D4FF"/>
+<rect x="515" y="150" width="120" height="60" rx="12" fill="#070B24" stroke="#00D4FF"/><text x="575" y="172" fill="#93A0C8" font-size="13" text-anchor="middle">الرابطة</text><text x="575" y="198" fill="#00D4FF" font-size="22" font-weight="800" text-anchor="middle">64</text>
+<rect x="65" y="150" width="120" height="60" rx="12" fill="#070B24" stroke="#00D4FF"/><text x="125" y="172" fill="#93A0C8" font-size="13" text-anchor="middle">التطور</text><text x="125" y="198" fill="#00D4FF" font-size="22" font-weight="800" text-anchor="middle">52%</text>
+</svg>
+<script>document.getElementById('devav').innerHTML=SM.avatarSVG('thaqib',1,{static:true}).replace(/^<svg[^>]*>/,'').replace(/<\/svg>\s*$/,'')</script>
+</div></body></html>

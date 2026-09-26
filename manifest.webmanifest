@@ -1,0 +1,15 @@
+{
+  "name": "العقل الذكي — Smart Mind",
+  "short_name": "العقل الذكي",
+  "description": "رفيقك الرقمي العربي الذكي",
+  "lang": "ar", "dir": "rtl",
+  "start_url": "./", "scope": "./",
+  "display": "standalone", "orientation": "portrait",
+  "background_color": "#070B24", "theme_color": "#070B24",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/logo.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
